@@ -37,6 +37,10 @@
     },
     "summary": {
       "type": "string"
+    },
+    "comments": {
+      "via": "blog_post",
+      "collection": "comments"
     }
   }
 }
