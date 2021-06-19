@@ -13,8 +13,8 @@
   "pluginOptions": {},
   "attributes": {
     "blog_post": {
-      "model": "blog-posts",
-      "via": "comments"
+      "via": "comments",
+      "model": "blog-posts"
     },
     "message": {
       "type": "text"

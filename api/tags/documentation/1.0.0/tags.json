@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/comments": {
+    "/tags": {
       "get": {
         "deprecated": false,
-        "description": "Find all the comments's records",
+        "description": "Find all the tags's records",
         "responses": {
           "200": {
-            "description": "Retrieve comments document(s)",
+            "description": "Retrieve tags document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Comments"
+                    "$ref": "#/components/schemas/Tags"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Comments"
+          "Tags"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new comments record",
+        "description": "Create a new tags record",
         "responses": {
           "200": {
-            "description": "Retrieve comments document(s)",
+            "description": "Retrieve tags document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Comments"
+                  "$ref": "#/components/schemas/Tags"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Comments"
+          "Tags"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewComments"
+                "$ref": "#/components/schemas/NewTags"
               }
             }
           }
         }
       }
     },
-    "/comments/count": {
+    "/tags/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of comments documents",
+        "description": "Retrieve the numver of tags documents",
         "responses": {
           "200": {
-            "description": "Retrieve comments document(s)",
+            "description": "Retrieve tags document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Comments"
+          "Tags"
         ],
         "parameters": []
       }
     },
-    "/comments/{id}": {
+    "/tags/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one comments record",
+        "description": "Find one tags record",
         "responses": {
           "200": {
-            "description": "Retrieve comments document(s)",
+            "description": "Retrieve tags document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Comments"
+                  "$ref": "#/components/schemas/Tags"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Comments"
+          "Tags"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single comments record",
+        "description": "Update a single tags record",
         "responses": {
           "200": {
-            "description": "Retrieve comments document(s)",
+            "description": "Retrieve tags document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Comments"
+                  "$ref": "#/components/schemas/Tags"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Comments"
+          "Tags"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewComments"
+                "$ref": "#/components/schemas/NewTags"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single comments record",
+        "description": "Delete a single tags record",
         "responses": {
           "200": {
-            "description": "deletes a single comments based on the ID supplied",
+            "description": "deletes a single tags based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Comments"
+          "Tags"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Comments": {
+      "Tags": {
         "required": [
           "id"
         ],
@@ -522,58 +522,7 @@
           "id": {
             "type": "string"
           },
-          "blog_post": {
-            "required": [
-              "id",
-              "Title",
-              "content"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "Title": {
-                "type": "string"
-              },
-              "content": {
-                "type": "string"
-              },
-              "slug": {
-                "type": "uid"
-              },
-              "cover_image": {
-                "type": "string"
-              },
-              "summary": {
-                "type": "string"
-              },
-              "comments": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "tags": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "published_at": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "message": {
-            "type": "string"
-          },
-          "comment_owner": {
+          "name": {
             "type": "string"
           },
           "published_at": {
@@ -582,15 +531,9 @@
           }
         }
       },
-      "NewComments": {
+      "NewTags": {
         "properties": {
-          "blog_post": {
-            "type": "string"
-          },
-          "message": {
-            "type": "string"
-          },
-          "comment_owner": {
+          "name": {
             "type": "string"
           },
           "published_at": {
@@ -609,7 +552,7 @@
   },
   "tags": [
     {
-      "name": "Comments"
+      "name": "Tags"
     }
   ]
 }
